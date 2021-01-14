@@ -18,6 +18,7 @@ export const Container = styled.div<ContainerProps>`
 
     nav {
       a {
+        position: relative;
         color: #fff;
         text-decoration: none;
         font-size: 16px;
@@ -27,7 +28,20 @@ export const Container = styled.div<ContainerProps>`
           margin-left: 32px;
         }
 
-        &:hover {
+        &.selected {
+          &:before {
+            content: '';
+            position: absolute;
+            width: 73px;
+            height: 2px;
+            top: calc(100% + 10px);
+
+            /* Orange */
+
+            background: #ff872c;
+          }
+        }
+        &:not(.selected) {
           opacity: 0.6;
         }
       }
